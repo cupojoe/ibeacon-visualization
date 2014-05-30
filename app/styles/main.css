@@ -27,6 +27,8 @@ body {
 		color: #444;
 		font-family: Tahoma;
 		font-size: 13px;
+		font-weight: bold;
+		margin-bottom: 0;
 		margin-right: 10px;
 		margin-top: 1px;
 		text-transform: uppercase;
@@ -40,8 +42,17 @@ body {
 	position: relative;
 }
 
-	#temp {
-		position: absolute;
+	#beacon.init {
+		visibility: hidden;
+	}
+
+	@-webkit-keyframes fadein {
+	    0% { opacity: 0; visibility: visible; }
+	    100% { opacity: 1; }
+	}
+
+	.fadein {
+	    -webkit-animation: fadein 3s linear;
 	}
 
 	img.beacon-background {
@@ -51,7 +62,9 @@ body {
 	}
 
 	img.lightbulb {
+		left: 0;
 		position: absolute;
+		top: 0;
 		z-index: 9999;
 	}
 	
@@ -103,6 +116,6 @@ body {
 	.stage-5 .lightbulb.ring-2.flicker,
 	.stage-5 .lightbulb.ring-3.flicker,
 	.stage-5 .lightbulb.ring-4.flicker {
-		-webkit-filter: drop-shadow(0px 0px 3px rgba(239, 228, 182, 1.0));
-		filter: drop-shadow(0px 0px 3px rgba(239, 228, 182, 1.0));
+		-webkit-filter: drop-shadow(0px 0px 0px rgba(239, 228, 182, 6.0));
+		filter: drop-shadow(0px 0px 0px rgba(239, 228, 182, 6.0));
 	}

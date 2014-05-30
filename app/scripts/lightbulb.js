@@ -42,24 +42,29 @@ var lightbulb = function( param ) {
 	
 	var bulb = prop.bulb;
 	
-	this.set = function(id, w, h, percW, percH, percX, percY, flickerValue) {
+	this.set = function(id, x, y, w, h, percW, percH, percX, percY, b) {
 		this.id = id;
-		this.width = w;
-		this.height = h;
+		this.x = x;
+		this.y = y;
+		this.w = w;
+		this.h = h;
 		this.percWidth = percW;
 		this.percHeight = percH;
 		this.percX = percX;
 		this.percY = percY;
-	};
-
-	this.storeBulb = function(b) {
-		prop.bulb = b;
-		bulb = prop.bulb;
+		this.bulb = b;
+		bulb = this.bulb;
 	};
 	
+	this.load = function() {
+		this.bulb.css('width', this.percWidth + '%' );
+		this.bulb.css('left', this.percX + '%' );
+		this.bulb.css('top', this.percY + '%' );
+	};	
+	
 	this.getBulb = function() {
-		return prop.bulb;
-	}
+		return this.bulb;
+	};
 	
 	// === flickers below ===
 
@@ -71,12 +76,12 @@ var lightbulb = function( param ) {
 	};
 	
 	var initFlicker = function() {
-		randomInterval = 1 + Math.floor(Math.random() * 50);
+		randomInterval = 1 + Math.floor(Math.random() * 25);
 		repeatFlicker( randomInterval );
 	};
 	
 	var repeatFlicker = function( interval ) {
-		randomInterval = 1 + Math.floor(Math.random() * 50);
+		randomInterval = 1 + Math.floor(Math.random() * 25);
 		flickerCycle = setInterval(function() {
 			flicker();
 			clearInterval( flickerCycle );
