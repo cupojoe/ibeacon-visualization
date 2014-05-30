@@ -1,0 +1,108 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #323232;
+	text-align: center;
+}
+
+#prototype-menu {
+	background: #ddd;
+	border-bottom: 2px solid #2f2f2f;
+	float: left;
+	padding: 10px;
+	position: fixed;
+	width: 100%;
+	z-index: 99999;
+}
+
+	#prototype-menu h3,
+	#prototype-menu select {
+		float: left;
+	}
+	
+	#prototype-menu h3 {
+		color: #444;
+		font-family: Tahoma;
+		font-size: 13px;
+		margin-right: 10px;
+		margin-top: 1px;
+		text-transform: uppercase;
+	}
+	
+	#prototype-menu select {
+		margin-right: 50px;
+	}
+
+#beacon {
+	position: relative;
+}
+
+	#temp {
+		position: absolute;
+	}
+
+	img.beacon-background {
+		left: 0;
+		top: 0;
+		width: 100%;
+	}
+
+	img.lightbulb {
+		position: absolute;
+		z-index: 9999;
+	}
+	
+	.lightbulb {
+		-webkit-filter: opacity(0.6);
+		filter: opacity(0.6);
+	}
+	
+	.stage-0 .lightbulb.duplicate,
+	.stage-1 .lightbulb.duplicate,
+	.stage-2 .lightbulb.ring-2.duplicate,
+	.stage-2 .lightbulb.ring-3.duplicate,
+	.stage-2 .lightbulb.ring-4.duplicate,
+	.stage-3 .lightbulb.ring-3.duplicate,
+	.stage-3 .lightbulb.ring-4.duplicate,
+	.stage-4 .lightbulb.ring-4.duplicate {
+		display: none;
+	}
+	
+	.stage-1 .lightbulb.ring-1,
+	.stage-2 .lightbulb.ring-1,
+	.stage-2 .lightbulb.ring-2,
+	.stage-3 .lightbulb.ring-1,
+	.stage-3 .lightbulb.ring-2,
+	.stage-3 .lightbulb.ring-3,
+	.stage-4 .lightbulb.ring-1,
+	.stage-4 .lightbulb.ring-2,
+	.stage-4 .lightbulb.ring-3,
+	.stage-4 .lightbulb.ring-4,
+	.stage-5 .lightbulb.ring-1,
+	.stage-5 .lightbulb.ring-2,
+	.stage-5 .lightbulb.ring-3,
+	.stage-5 .lightbulb.ring-4 {
+		-webkit-filter: drop-shadow(0px 0px 10px rgba(239, 228, 182, 1.0)) opacity(1.0);
+		filter: drop-shadow(0px 0px 10px rgba(239, 228, 182, 1.0)) opacity(1.0);		
+	}
+	
+	.stage-1 .lightbulb.ring-1.flicker,
+	.stage-2 .lightbulb.ring-1.flicker,
+	.stage-2 .lightbulb.ring-2.flicker,
+	.stage-3 .lightbulb.ring-1.flicker,
+	.stage-3 .lightbulb.ring-2.flicker,
+	.stage-3 .lightbulb.ring-3.flicker,
+	.stage-4 .lightbulb.ring-1.flicker,
+	.stage-4 .lightbulb.ring-2.flicker,
+	.stage-4 .lightbulb.ring-3.flicker,
+	.stage-4 .lightbulb.ring-4.flicker,
+	.stage-5 .lightbulb.ring-1.flicker,
+	.stage-5 .lightbulb.ring-2.flicker,
+	.stage-5 .lightbulb.ring-3.flicker,
+	.stage-5 .lightbulb.ring-4.flicker {
+		-webkit-filter: drop-shadow(0px 0px 3px rgba(239, 228, 182, 1.0));
+		filter: drop-shadow(0px 0px 3px rgba(239, 228, 182, 1.0));
+	}
