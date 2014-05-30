@@ -5,9 +5,10 @@
 	
 */
 
+var CONSTANTS = { bcwidth: 5100, bcheight: 3300 };
+
 var beacon = function() {
 	var bc = $('#beacon'),
-		CONSTANTS = { bcwidth: 5100, bcheight: 3300 },
 		lightbulbs = $('.lightbulb');
 	
 	var init = function() {
