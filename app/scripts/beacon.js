@@ -19,7 +19,6 @@ var beacon = function() {
 	
 	// recursively load each bulb from the PSD file
 	// with the correct width and height and X/Y pos
-	// buildObj = the JSON containing info from the PSD
 	var loadBulbs = function( lightbulbs, i, callback ) {
 		if ( i < lightbulbs.length ) {
 			
