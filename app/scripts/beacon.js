@@ -39,7 +39,7 @@ var Beacon = function() {
 				bulb.set(id, x, y, w, h, percW, percH, percX, percY, $(this));
 				bulb.load();
 				
-				bulb.enableFlicker();
+				//bulb.enableFlicker();
 			
 				loadBulbs(lightbulbs, i+1, callback);
 			}).each(function() {
