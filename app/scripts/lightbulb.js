@@ -4,7 +4,7 @@
 	Description: 	Lightbulb object holds all properties and methods pertaining to a single bulb.
 */
 
-var lightbulb = function( param ) {
+var Lightbulb = function( param ) {
 	
 	// default properties
 	var prop = {

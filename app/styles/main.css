@@ -62,8 +62,10 @@ body {
 
 	img.beacon-background {
 		left: 0;
+		position: relative;
 		top: 0;
 		width: 100%;
+		z-index: 999;
 	}
 
 	img.lightbulb {
@@ -129,35 +131,48 @@ body {
 	}
 
 #users {
-	height: 42.7272727%;
-	left: 20.039215686%;
+	transform: rotate(-90deg);
+	-webkit-transform: rotate(-90deg);
+	left: 20.1372549%;
 	position: absolute;
-	top: 28.3%;
-	width: 27.5686275%;
+	top: 49.8%;
+	width: 27.372549%;
 }
 
 	#users ul {
 		list-style-type: none;
-		margin-left: 0%;
-		margin-top: 45%;
+		margin: 0;
+		padding: 0;
 		position: relative;
-		text-align: right;
+		text-align: left;
 		width: 100%;
 	}
 	
 	#users ul li {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+		-webkit-transition: all 1s ease;
+		background: green;
+		margin: 0;
+		padding: 0;
 		position: absolute;
 		width: 100%;
-/*		transform: rotate(7deg);
-		-webkit-transform: rotate(7deg);*/
+	}
+	
+	#users ul li img {
+		top: 6px;
+		position: absolute;
+		width: 12%;
 	}
 	
 	#users ul li p {
+		position: absolute;
 		color: #fff;
 		font-family: Tahoma;
 		font-size: 1.2rem;
-		padding-right: 3%;
+		padding-left: 2%;
 		text-transform: uppercase;
+		top: -6px;
 	}
 
 #canvas {
