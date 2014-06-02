@@ -68,7 +68,7 @@ var Beacon = function( callback ) {
 	
 	this.addUser = function( user ) {
 		users.append( '<li id="user-' + user.id + '"><p>' + user.name + '</p><img src="images/user.png" alt="" /></li>' );
-		var userToBeAdded = $('#user-' + user.id);
+		// var userToBeAdded = $('#user-' + user.id);
 		// userToBeAdded.css('-webkit-transform', 'rotate(' + 0 + 'deg)');
 		// userToBeAdded.css('-webkit-transform', 'rotate(' + usersShown*12 + 'deg)');
 		$('#user-' + user.id).animateRotate( usersShown*12 );
