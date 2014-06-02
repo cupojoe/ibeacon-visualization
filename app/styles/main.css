@@ -149,6 +149,9 @@ body {
 	}
 	
 	#users ul li {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+		-webkit-transition: all 1s ease;
 		background: green;
 		margin: 0;
 		padding: 0;
