@@ -7,7 +7,7 @@
 
 var CONSTANTS = { bcwidth: 5100, bcheight: 3300 };
 
-var Beacon = function() {
+var Beacon = function( callback ) {
 	var bc = $('#beacon'),
 		lightbulbs = $('.lightbulb');
 	
@@ -15,6 +15,9 @@ var Beacon = function() {
 		loadBulbs( lightbulbs, 0, function() {
 			bc.removeClass('init');
 			bc.addClass('fadein');
+			if ( typeof callback == 'function' ) {
+				callback();
+			}
 		} );
 	};
 	
@@ -89,6 +92,8 @@ var loadTestMenu = function() {
 
 // when the doc loads
 $('document').ready(function() {
-	var bc = new Beacon();
+	var bc = new Beacon(function() {
+		console.log('ready!');
+	});
 	loadTestMenu();
 });
