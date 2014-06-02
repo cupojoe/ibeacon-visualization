@@ -7,7 +7,7 @@
 
 var CONSTANTS = { bcwidth: 5100, bcheight: 3300 };
 
-var beacon = function() {
+var Beacon = function() {
 	var bc = $('#beacon'),
 		lightbulbs = $('.lightbulb');
 	
@@ -24,7 +24,7 @@ var beacon = function() {
 		if ( i < lightbulbs.length ) {
 			
 			$('#' + lightbulbs[i].id).one('load', function() {
-				var bulb = new lightbulb();
+				var bulb = new Lightbulb();
 				var id = $(this).attr('id'),
 					x = $(this).data('x'),
 					y = $(this).data('y'),
@@ -89,6 +89,6 @@ var loadTestMenu = function() {
 
 // when the doc loads
 $('document').ready(function() {
-	var bc = new beacon();
+	var bc = new Beacon();
 	loadTestMenu();
 });
