@@ -9,6 +9,9 @@ require.config({
         domReady: '../bower_components/requirejs-domready/domReady',
         jquery: '../bower_components/jquery/dist/jquery',
         socketio: '../bower_components/socket.io-client/dist/socket.io',
+        Beacon: 'beacon',
+        Lightbulb: 'lightbulb',
+        User: 'user',
         app: 'app'
     },
     shim: {
