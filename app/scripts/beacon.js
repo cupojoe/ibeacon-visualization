@@ -17,7 +17,8 @@ define([
 				lightbulbs = $('.lightbulb'),
 				users = $('#users ul'),
 				usersList = users.find('li'),
-				usersShown = 0;
+				usersShown = 0,
+				userCollection = {};
 
 			var init = function() {
 				loadBulbs( lightbulbs, 0, function() {
@@ -80,12 +81,21 @@ define([
 				usersShown++;
 			};
 
+			this.addUserOnce = function(user) {
+				console.log(user);
+				if (!userCollection.hasOwnProperty(user.id)) {
+					userCollection[user.id] = user;
+					this.addUser(user);
+				}
+			};
+
 			this.removeUser = function( user ) {
 				var userToBeRemoved = $('#user-' + user.id),
 					nextAll = userToBeRemoved.nextAll();
 
 				// remove user
 				userToBeRemoved.remove();
+				delete userCollection[user.id];
 
 				// move all the other users down
 				nextAll.each(function() {
