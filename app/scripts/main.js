@@ -22,7 +22,10 @@ require.config({
         },
         app: {
             deps: ['jquery']
-        }
+        },
+        'Proton': {
+            exports: 'Proton'
+        },
     }
 });
 
