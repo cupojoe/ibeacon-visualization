@@ -1,0 +1,64 @@
+.lightbulb {
+    left: 0;
+    position: absolute;
+    top: 0;
+    z-index: 9999;
+
+    .opacity(0.6);
+    .transition(opacity .5s ease);
+}
+/*
+.fadein {
+    .lightbulb {
+        .opacity(.6);
+    }
+}*/
+
+.stage-0 .lightbulb.duplicate,
+.stage-1 .lightbulb.duplicate,
+.stage-2 .lightbulb.ring-2.duplicate,
+.stage-2 .lightbulb.ring-3.duplicate,
+.stage-2 .lightbulb.ring-4.duplicate,
+.stage-3 .lightbulb.ring-3.duplicate,
+.stage-3 .lightbulb.ring-4.duplicate,
+.stage-4 .lightbulb.ring-4.duplicate {
+    display: none;
+}
+
+.stage-1 .lightbulb.ring-1,
+.stage-2 .lightbulb.ring-1,
+.stage-2 .lightbulb.ring-2,
+.stage-3 .lightbulb.ring-1,
+.stage-3 .lightbulb.ring-2,
+.stage-3 .lightbulb.ring-3,
+.stage-4 .lightbulb.ring-1,
+.stage-4 .lightbulb.ring-2,
+.stage-4 .lightbulb.ring-3,
+.stage-4 .lightbulb.ring-4,
+.stage-5 .lightbulb.ring-1,
+.stage-5 .lightbulb.ring-2,
+.stage-5 .lightbulb.ring-3,
+.stage-5 .lightbulb.ring-4 {
+    -webkit-filter: drop-shadow(0px 0px 10px rgba(239, 228, 182, 1.0));
+    filter: drop-shadow(0px 0px 10px rgba(239, 228, 182, 1.0));
+    .opacity(1.0);
+}
+
+.stage-1 .lightbulb.ring-1.flicker,
+.stage-2 .lightbulb.ring-1.flicker,
+.stage-2 .lightbulb.ring-2.flicker,
+.stage-3 .lightbulb.ring-1.flicker,
+.stage-3 .lightbulb.ring-2.flicker,
+.stage-3 .lightbulb.ring-3.flicker,
+.stage-4 .lightbulb.ring-1.flicker,
+.stage-4 .lightbulb.ring-2.flicker,
+.stage-4 .lightbulb.ring-3.flicker,
+.stage-4 .lightbulb.ring-4.flicker,
+.stage-5 .lightbulb.ring-1.flicker,
+.stage-5 .lightbulb.ring-2.flicker,
+.stage-5 .lightbulb.ring-3.flicker,
+.stage-5 .lightbulb.ring-4.flicker {
+    -webkit-filter: drop-shadow(0px 0px 0px rgba(239, 228, 182, 0.6));
+    filter: drop-shadow(0px 0px 0px rgba(239, 228, 182, 0.6));
+    .opacity(0.6);
+}

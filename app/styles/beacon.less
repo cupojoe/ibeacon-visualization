@@ -1,0 +1,63 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	background: #323232;
+	font-size: 1.4rem;
+	text-align: center;
+}
+
+#prototype-menu {
+	background: #ddd;
+	border-bottom: 2px solid #2f2f2f;
+	float: left;
+	padding: 10px;
+	position: fixed;
+	width: 100%;
+	z-index: 99999;
+
+	h3, select {
+		float: left;
+	}
+
+	h3 {
+		color: #444;
+		font-family: Tahoma;
+		font-size: 13px;
+		font-weight: bold;
+		margin-bottom: 0;
+		margin-right: 10px;
+		margin-top: 1px;
+		text-transform: uppercase;
+	}
+
+	select {
+		margin-right: 50px;
+	}
+}
+
+#beacon {
+	position: relative;
+	.transition(opacity 1s ease);
+	&.init {
+		.opacity(0);
+	}
+
+	.beacon-background {
+		left: 0;
+		position: relative;
+		top: 0;
+		width: 100%;
+		z-index: 999;
+	}
+
+	&.fadein {
+	    .opacity(1);
+	}
+}

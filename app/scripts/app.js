@@ -1,7 +1,7 @@
 define([
-    'socketio', 'Beacon', 'User'
+    'socketio', 'Beacon', 'particles'
     ],
-    function(io, Beacon, User) {
+    function(io, Beacon, particles) {
         var socket = io.connect('http://agnystudio.noip.me:8080');
         //var socket = io.connect('http://10.0.1.3:8080');
         var beacon;
@@ -12,7 +12,7 @@ define([
                 for (var i=0; i<data.length; i++) {
                     var u = data[i];
                     if (u.state === 'CLRegionStateInside') {
-                        beacon.addUserOnce(new User({id: u._id, name: u.username, practice: 'FED'}));
+                        beacon.addUserOnce({id: u._id, name: u.username, practice: 'FED'});
                     }
                 }
             });
@@ -21,21 +21,21 @@ define([
             });
             socket.on('update-user', function (data) {
                 if (data.state === 'CLRegionStateInside') {
-                    beacon.addUserOnce(new User({id: data._id, name: data.username, practice: 'FED'}));
+                    beacon.addUserOnce({id: data._id, name: data.username, practice: 'FED'});
                 } else {
-                    beacon.removeUser(new User({id: data._id}));
+                    beacon.removeUser({id: data._id});
                 }
             });
 
-
-            // bc.addUser(new User({'id': '1', 'name': 'Test', 'practice': 'FED'}));
-            // bc.removeUser({ 'id': '1' });
-
             beacon.loadTestMenu();
+            particles.init();
         };
 
         return {
-            init: init
+            init: init,
+            getBeacon: function () {
+                return beacon;
+            }
         }
     }
 );

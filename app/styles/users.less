@@ -1,0 +1,76 @@
+#users {
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    left: 20.1372549%;
+    position: absolute;
+    top: 49.8%;
+    width: 27.372549%;
+    z-index: 999;
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        text-align: left;
+        width: 100%;
+
+        li {
+            .transition(all 1s ease);
+            background: green;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            width: 100%;
+            z-index: 999;
+
+            img {
+                top: 6px;
+                position: absolute;
+                width: 12%;
+            }
+
+            p {
+                position: absolute;
+                color: #fff;
+                font-family: Tahoma;
+                font-size: 1.2rem;
+                padding-left: 2%;
+                text-transform: uppercase;
+                top: -6px;
+            }
+        }
+    }
+}
+
+#canvas {
+    height: 700px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 700px;
+}
+
+/* Rotations */
+@iterations: 30;
+
+// helper class, will never show up in resulting css
+// will be called as long the index is above 0
+.loopingClass (@index) when (@index > -1) {
+
+    // create the actual css selector, example will result in
+
+    .rot_@{index} {
+
+        .rotate(@index*12deg);
+    }
+
+    // next iteration
+    .loopingClass(@index - 1);
+}
+
+// end the loop when index is 0
+.loopingClass (-1) {}
+
+// "call" the loopingClass the first time with highest value
+.loopingClass (@iterations);

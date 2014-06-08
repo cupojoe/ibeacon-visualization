@@ -1,5 +1,6 @@
 define([
-	'jquery'
+	'jquery',
+	'particles'
 	],
 	function ($) {
 		var User = function( param ) {
@@ -10,7 +11,8 @@ define([
 				practice: null,
 				timeCheckin: null,
 				timeCheckout: null,
-				elapsedTime: null
+				elapsedTime: null,
+				emitter: undefined
 			};
 
 			$.extend( prop, param );
@@ -21,6 +23,7 @@ define([
 			this.timeCheckin = prop.timeCheckin;
 			this.timeCheckout = prop.timeCheckout;
 			this.elapsedTime = prop.elapsedTime;
+			this.emitter = prop.emitter;
 
 			this.set = function( id, name, practice ) {
 				this.id = id;
