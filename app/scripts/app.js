@@ -11,7 +11,7 @@ define([
             socket.on('all-status', function (data) {
                 for (var i=0; i<data.length; i++) {
                     var u = data[i];
-                    if (u.state === 'CLRegionStateInside') {
+                    if (u.state === 'enter') {
                         beacon.addUserOnce({id: u._id, name: u.username, practice: 'FED'});
                     }
                 }
@@ -20,7 +20,7 @@ define([
                 console.log(data);
             });
             socket.on('update-user', function (data) {
-                if (data.state === 'CLRegionStateInside') {
+                if (data.state === 'enter') {
                     beacon.addUserOnce({id: data._id, name: data.username, practice: 'FED'});
                 } else {
                     beacon.removeUser({id: data._id});
