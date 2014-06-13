@@ -1,18 +1,22 @@
 define([
-    'socketio', 'Beacon', 'particles'
+    'socketio', 'Beacon', 'particles', 'practices'
     ],
-    function(io, Beacon, particles) {
-        var socket = io.connect('http://agnystudio.noip.me:8080');
+    function(io, Beacon, particles, practices) {
+        var server = 'http://agnystudio.noip.me:8080';
+        var socket = io.connect(server);
         //var socket = io.connect('http://10.0.1.3:8080');
         var beacon;
         var init = function() {
             beacon = new Beacon();
+            practices.getPractices(bindSocket);
+        };
 
+        function bindSocket(practiceResults) {
             socket.on('all-status', function (data) {
                 for (var i=0; i<data.length; i++) {
                     var u = data[i];
                     if (u.state === 'enter') {
-                        beacon.addUserOnce({id: u._id, name: u.username, practice: 'FED'});
+                        beacon.addUserOnce({id: u._id, name: u.username, practice: u.practice});
                     }
                 }
             });
@@ -21,7 +25,7 @@ define([
             });
             socket.on('update-user', function (data) {
                 if (data.state === 'enter') {
-                    beacon.addUserOnce({id: data._id, name: data.username, practice: 'FED'});
+                    beacon.addUserOnce({id: data._id, name: data.username, practice: data.practice});
                 } else {
                     beacon.removeUser({id: data._id});
                 }
@@ -30,6 +34,8 @@ define([
             beacon.loadTestMenu();
             particles.init();
         };
+
+
 
         return {
             init: init,

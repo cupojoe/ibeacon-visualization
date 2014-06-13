@@ -9,9 +9,10 @@ define([
 	'jquery',
 	'Lightbulb',
 	'User',
-	'particles'
+	'particles',
+	'practices'
 	],
-	function ($, Lightbulb, User, particles) {
+	function ($, Lightbulb, User, particles, practices) {
 		var CONSTANTS = { bcwidth: 5100, bcheight: 3300 };
 
 		var Beacon = function( callback ) {
@@ -79,7 +80,8 @@ define([
 			//**
 
 			var addUser = function( user ) {
-				users.append( '<li id="user-' + user.id + '"><p>' + user.name + '</p><img src="images/user.png" alt="" /></li>' );
+				//users.append( '<li id="user-' + user.id + '"><p>' + user.name + '</p><img src="images/user.png" alt="" /></li>' );
+				users.append( '<li id="user-' + user.id + '"><p>' + user.name + '</p><div class="pin"></div><div class="ball" style="background-color:#' + practices.getPracticeColor(user.practice) + '"></div></li>' );
 				(function() {
 					var uid = usersShown;
 					setTimeout(function() {
@@ -90,8 +92,9 @@ define([
 			};
 
 			this.addUserOnce = function(userData) {
+				console.log(userData);
 				if (indexOfUser(userData) === -1) {
-					userData.emitter = particles.createEmitter(userCollection.length);
+					userData.emitter = particles.createEmitter(userCollection.length, practices.getPracticeColor(userData.practice));
 					var u = new User(userData);
 					userCollection.push(u);
 					addUser(u);

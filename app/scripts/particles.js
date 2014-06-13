@@ -31,7 +31,7 @@ define([
             proton = new Proton;
         }
 
-        function createEmitter(index) {
+        function createEmitter(index, hexColor) {
             emitter = new Proton.Emitter();
             emitter.damping = 0.008;
             emitter.index = index;
@@ -49,17 +49,17 @@ define([
             };
             //attractionBehaviour = new Proton.Attraction(attractionCenter, 50, 50);
             //crossZoneBehaviour = new Proton.CrossZone(new Proton.RectZone(0, 0, canvas.width, canvas.height), 'bound');
-            crossZoneBehaviour = new Proton.CrossZone(new Proton.CircleZone(canvas.width/2, canvas.height/2, canvas.width/2 - 35), 'bound');
+            crossZoneBehaviour = new Proton.CrossZone(new Proton.CircleZone(canvas.width/2, canvas.height/2, canvas.width/2 - 75), 'bound');
 
             //'#ff9900',
-            var color = new Proton.Color('random');
+            var color = new Proton.Color(hexColor);
             emitter.addBehaviour(color);
 
             //emitter.addBehaviour(attractionBehaviour, crossZoneBehaviour);
             emitter.addBehaviour(crossZoneBehaviour);
             emitter.addBehaviour(new Proton.RandomDrift(10, 10, .05));
-            emitter.p.x = canvas.width/2 + (canvas.width/2 - 40) * Math.cos( (85+index*12) * Math.PI/180 );
-            emitter.p.y = canvas.height/2 + (canvas.height/2 - 40) * Math.sin( (85+index*12) * Math.PI/180 );
+            emitter.p.x = canvas.width/2 + (canvas.width/2 - 80) * Math.cos( (85+index*12) * Math.PI/180 );
+            emitter.p.y = canvas.height/2 + (canvas.height/2 - 80) * Math.sin( (85+index*12) * Math.PI/180 );
             emitter.emit();
             proton.addEmitter(emitter);
 

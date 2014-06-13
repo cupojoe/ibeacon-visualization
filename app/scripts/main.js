@@ -14,6 +14,7 @@ require.config({
         Lightbulb: 'lightbulb',
         User: 'user',
         particles: 'particles',
+        practices: 'practices',
         app: 'app'
     },
     shim: {

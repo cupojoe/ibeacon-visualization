@@ -9,6 +9,7 @@ body {
   background: #323232;
   font-size: 1.4rem;
   text-align: center;
+  height: 100%;
 }
 #prototype-menu {
   background: #ddd;
@@ -103,8 +104,6 @@ body {
 .stage-5 .lightbulb.ring-2,
 .stage-5 .lightbulb.ring-3,
 .stage-5 .lightbulb.ring-4 {
-  -webkit-filter: drop-shadow(0px 0px 10px #efe4b6);
-  filter: drop-shadow(0px 0px 10px #efe4b6);
   -webkit-opacity: 1;
   -moz-opacity: 1;
   opacity: 1;
@@ -123,8 +122,6 @@ body {
 .stage-5 .lightbulb.ring-2.flicker,
 .stage-5 .lightbulb.ring-3.flicker,
 .stage-5 .lightbulb.ring-4.flicker {
-  -webkit-filter: drop-shadow(0px 0px 0px rgba(239, 228, 182, 0.6));
-  filter: drop-shadow(0px 0px 0px rgba(239, 228, 182, 0.6));
   -webkit-opacity: 0.6;
   -moz-opacity: 0.6;
   opacity: 0.6;
@@ -162,6 +159,23 @@ body {
   top: 6px;
   position: absolute;
   width: 12%;
+}
+#users ul li .pin {
+  width: 2.75vw;
+  height: .35vw;
+  position: absolute;
+  top: 1vw;
+  background-color: #999;
+}
+#users ul li .ball {
+  width: 1vw;
+  height: 1vw;
+  position: absolute;
+  top: .65vw;
+  left: 2.5vw;
+  background-color: #fff;
+  border-radius: .5vw;
+  opacity: .85;
 }
 #users ul li p {
   position: absolute;
