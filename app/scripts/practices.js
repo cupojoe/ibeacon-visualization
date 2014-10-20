@@ -10,7 +10,8 @@ define([
     ],
     function ($) {
         var practices;
-        var server = 'http://agnystudio.noip.me:8080';
+        //var server = 'http://agnystudio.noip.me:8080';
+        var server = 'http://ec2-54-200-253-132.us-west-2.compute.amazonaws.com:8080';
         var defaultColor = 'FF0000';
 
         function getPractices(callback) {

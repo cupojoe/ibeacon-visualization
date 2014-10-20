@@ -2,7 +2,8 @@ define([
     'socketio', 'Beacon', 'particles', 'practices'
     ],
     function(io, Beacon, particles, practices) {
-        var server = 'http://agnystudio.noip.me:8080';
+        //var server = 'http://agnystudio.noip.me:8080';
+        var server = 'http://ec2-54-200-253-132.us-west-2.compute.amazonaws.com:8080';
         var socket = io.connect(server);
         //var socket = io.connect('http://10.0.1.3:8080');
         var beacon;
