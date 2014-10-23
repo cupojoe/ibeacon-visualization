@@ -23,7 +23,7 @@ define([
             window.onresize = function(e) {
                 canvas.width = canvas.width;
                 canvas.height = canvas.width;
-                crossZoneBehaviour.reset(new Proton.CircleZone(canvas.width/2, canvas.height/2, canvas.width/2 - 35), 'bound');
+                crossZoneBehaviour.reset(new Proton.CircleZone(canvas.width/2, canvas.height/2, canvas.width/2 - 5), 'bound');
             }
         }
 
@@ -49,7 +49,7 @@ define([
             };
             //attractionBehaviour = new Proton.Attraction(attractionCenter, 50, 50);
             //crossZoneBehaviour = new Proton.CrossZone(new Proton.RectZone(0, 0, canvas.width, canvas.height), 'bound');
-            crossZoneBehaviour = new Proton.CrossZone(new Proton.CircleZone(canvas.width/2, canvas.height/2, canvas.width/2 - 75), 'bound');
+            crossZoneBehaviour = new Proton.CrossZone(new Proton.CircleZone(canvas.width/2, canvas.height/2, canvas.width/2 - 5), 'bound');
 
             //'#ff9900',
             var color = new Proton.Color(hexColor);
